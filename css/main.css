@@ -1,0 +1,239 @@
+/*.nav-index-btn{*/
+    /*background-color: #2aabd2;*/
+    /*color: white;*/
+    /*padding: 10px;*/
+    /*border-radius: 3px;*/
+/*}*/
+
+/*.notice{*/
+  /*border-radius: 20px 0 0 20px;*/
+/*}*/
+body {
+  padding-right: 0!important;
+}
+.message-box{
+  /*border: solid 1px black;*/
+    /*float: left;*/
+    position: relative;
+    left: 18%;
+}
+.leave-message{
+    /*border: solid 1px black;*/
+    clear: both;
+    /*position: relative;*/
+    /*left: 13%;*/
+}
+.starter-template{
+    position: relative;
+    left:2%;
+}
+/*.message-box-head{*/
+  /*width: 30%;*/
+  /*height: 30px;*/
+  /*text-align: center;*/
+  /*border-radius: 10px 0 0 0;*/
+/*}*/
+/*.btn-radius{*/
+  /*border-radius: 10px;*/
+/*}*/
+/*.leave-message{*/
+  /*margin: 0;*/
+  /*float: right;*/
+  /*position: relative;*/
+  /*bottom: 550px;*/
+  /*right: 100px;*/
+/*}*/
+/*.message-board{*/
+  /*margin: 0;*/
+  /*!*float: left;*!*/
+  /*width: 50%;*/
+  /*border: solid 1px black;*/
+  /*border-radius: 10px;*/
+/*}*/
+/*#fh5co-footer{*/
+  /*padding-bottom: 0;*/
+/*}*/
+/*.form-bg{*/
+    /*background: #00b4ef;*/
+/*}*/
+.form-horizontal{
+    background: #fff;
+    padding-bottom: 40px;
+    border-radius: 15px;
+    text-align: center;
+}
+.form-horizontal .heading{
+    display: block;
+    font-size: 35px;
+    font-weight: 700;
+    padding: 35px 0;
+    border-bottom: 1px solid #f0f0f0;
+    margin-bottom: 30px;
+}
+.form-horizontal .form-group{
+    padding: 0 40px;
+    margin: 0 0 25px 0;
+    position: relative;
+}
+.form-horizontal .form-control{
+    background: #f0f0f0;
+    border: none;
+    border-radius: 20px;
+    box-shadow: none;
+    padding: 0 20px 0 45px;
+    height: 40px;
+    transition: all 0.3s ease 0s;
+}
+.form-horizontal .form-control:focus{
+    background: #e0e0e0;
+    box-shadow: none;
+    outline: 0 none;
+}
+.form-horizontal .form-group i{
+    position: absolute;
+    top: 12px;
+    left: 60px;
+    font-size: 17px;
+    color: #c8c8c8;
+    transition : all 0.5s ease 0s;
+}
+.form-horizontal .form-control:focus + i{
+    color: #00b4ef;
+}
+.form-horizontal .fa-question-circle{
+    display: inline-block;
+    position: absolute;
+    top: 12px;
+    right: 60px;
+    font-size: 20px;
+    color: #808080;
+    transition: all 0.5s ease 0s;
+}
+.form-horizontal .fa-question-circle:hover{
+    color: #000;
+}
+.form-horizontal .main-checkbox{
+    float: left;
+    width: 20px;
+    height: 20px;
+    background: #11a3fc;
+    border-radius: 50%;
+    position: relative;
+    margin: 5px 0 0 5px;
+    border: 1px solid #11a3fc;
+}
+.form-horizontal .main-checkbox label{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    cursor: pointer;
+}
+.form-horizontal .main-checkbox label:after{
+    content: "";
+    width: 10px;
+    height: 5px;
+    position: absolute;
+    top: 5px;
+    left: 4px;
+    border: 3px solid #fff;
+    border-top: none;
+    border-right: none;
+    background: transparent;
+    opacity: 0;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+.form-horizontal .main-checkbox input[type=checkbox]{
+    visibility: hidden;
+}
+.form-horizontal .main-checkbox input[type=checkbox]:checked + label:after{
+    opacity: 1;
+}
+.form-horizontal .text{
+    float: left;
+    margin-left: 7px;
+    line-height: 20px;
+    padding-top: 5px;
+    text-transform: capitalize;
+}
+.form-horizontal .btn-form-temp{
+    float: right;
+    font-size: 14px;
+    color: #fff;
+    background: #00b4ef;
+    border-radius: 30px;
+    padding: 10px 25px;
+    border: none;
+    text-transform: capitalize;
+    transition: all 0.5s ease 0s;
+}
+
+
+/*article*/
+/*#article-list span{
+  background-color: #EE4000;
+}
+
+.flexslider{
+  background-color: #e9e4eb;
+  margin: 0;
+  padding: 0;
+}*/
+#page{
+  background-color: #e9e4eb;
+  margin: 0;
+  padding: 0;
+}
+#fh5co-article .flexslider{
+  height: 300px;
+}
+.timeline-post{
+  padding: 10px;
+  background-color: white;
+  margin-left: 5%;
+  margin-right: 5%;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  /*border: 1px solid red;*/
+}
+#addNewArticle{
+  margin: 10px;
+  position: relative;
+  left: 60px;
+}
+.btn-editArticle{
+  float: right;
+  position: relative;
+  bottom: 30px;
+}
+.btn-deleteArticle{
+    float: right;
+    position: relative;
+    bottom: 30px;
+}
+#addNewArticle a:visited{
+  color: white;
+}
+.timeline-post a{
+  color: #2f9adb;
+}
+#page .fh5co-nav{
+  background-color: white;
+}
+#issueArticle{
+  margin: 10px;
+  position: relative;
+  left: 800px;
+}
+#textareaContainer{
+  display: none;
+}
+#searchContainer{
+  width: 200px;
+  float: right;
+  position: relative;
+  bottom: 40px;
+  right: 50px;
+}

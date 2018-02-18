@@ -1,0 +1,212 @@
+
+CREATE TABLE teacher(
+tid bigint PRIMARY KEY,
+password varchar(32),
+tname varchar(16)
+);
+
+CREATE TABLE student(
+sid bigint PRIMARY KEY,
+password varchar(32),
+sname varchar(16)
+);
+
+CREATE TABLE course_basic(
+course_id bigint,
+tid bigint,
+course_name varchar(16),
+CONSTRAINT course_basic_id UNIQUE (course_id,tid)
+);
+
+CREATE TABLE course(
+course_id bigint,
+sid bigint,
+CONSTRAINT course_selection_id UNIQUE (course_id,sid)
+);
+
+INSERT INTO teacher VALUES(10001,'root','root');
+INSERT INTO student VALUES(30001,'stu','stu');
+
+
+CREATE TABLE comment_list(
+id int PRIMARY KEY AUTO_INCREMENT,
+name varchar(16),
+email varchar(64),
+comment varchar(128),
+comment_date date,
+CONSTRAINT comment_id UNIQUE (name,email,comment,comment_date)
+);
+INSERT INTO comment_list(name,comment,comment_date) VALUES('Tom','Hello','2017-3-3');
+
+
+CREATE TABLE article(
+id bigint PRIMARY KEY AUTO_INCREMENT,
+title varchar(128),
+html varchar(10240),
+content varchar(128),
+article_date date,
+CONSTRAINT article_id UNIQUE (title,article_date)
+);
+
+CREATE TABLE notice(
+id bigint PRIMARY KEY AUTO_INCREMENT,
+content varchar(256),
+time date
+);
+
+CREATE TABLE forum_topic(
+id int primary key auto_increment,
+user_id int,
+title varchar(128),
+content varchar(128),
+);
+
+create table forum_topic_back (
+id int primary key auto_increment,
+topic_id int,
+user_id int,
+title varchar(128),
+content varchar(128)
+);
+
+
+Create table homework(
+	hw_id bigint not null primary key,
+	tid bigint,
+	course_id bigint,
+	hw_name varchar(20),
+	summary char(200),
+	deadline datetime,
+	foreign key(tid) references teacher(tid),
+	foreign key(course_id) references course(course_id)
+);
+
+
+Create table student_homework(
+	handintime datetime,
+	grade int,
+	sid bigint,
+	hw_id bigint,
+	hw_Index char(50),
+	comment char(200),
+	foreign key(hw_id) references homework(hw_id),
+	foreign key(sid) references student(sid), 
+        primary key(hw_id,sid)
+); 
+
+//ver1.1 添加--小组表-----------已废弃
+//CREATE TABLE stu_group(
+//sid bigint primary key,
+//group_id bigint,
+//foreign key(sid) references student(sid)
+//);
+
+
+
+//ver1.3 添加论坛表
+//帖子
+
+create table posts(
+
+id int primary key auto_increment,
+
+owner varchar(16) not null,
+
+title varchar(128) not null,
+
+content varchar(10240) not null,
+
+post_date date
+);
+
+
+//回复
+
+create table replys(
+
+id int primary key auto_increment,
+
+post_id int not null,
+
+owner varchar(16) not null,
+
+content varchar(256) not null,
+
+reply_date date
+);
+
+
+//废弃ver1.1的小组表 
+//stu_group 改用 groups表
+
+create table groups(
+
+id int primary key,
+
+name varchar(16),
+
+gid int
+
+);
+
+//为方便测试 在基本信息表中插入第三个人
+insert into student(sid, password, sname) values(30002, 'stu', 'stu2');
+
+//插入分组信息 老师默认在0组
+
+INSERT INTO groups VALUES (10001,'root',0);
+
+insert into groups values (30001, 'stu', 1);
+
+insert into groups values (30002, 'stu2', 2);
+
+// +-------+------+------+
+// 
+   | id    | name | gid  |
+//
+   +-------+------+------+
+// 
+   | 10001 | root |    0 |
+// 
+   | 30001 | stu  |    1 |
+// 
+   | 30002 | stu2 |    2 |
+//
+   +-------+------+------+
+
+
+
+
+
+
+ver 1.8更新
+// 资料模块 视频文件存储
+// course说明 软需:0 软管:1
+create table video(
+vid bigint primary key auto_increment,
+name varchar(64),
+size bigint,
+path varchar(128) unique,
+upload_time date,
+valid boolean
+);
+
+// 资料模块 其他文件存储
+create table file(
+fid bigint primary key auto_increment,
+name varchar(64),
+size bigint,
+path varchar(128) unique,
+upload_time date,
+valid boolean
+);
+
+ver 1.9更新
+create table user_signup(
+id bigint PRIMARY KEY auto_increment,
+password varchar(32),
+name varchar(16),
+mail varchar(64),
+question varchar(256),
+answer varchar(16)
+) auto_increment=30001;

@@ -1,0 +1,79 @@
+.breadcrumb {
+    height: 50px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.38) !important;
+}
+
+.breadcrumb,
+.border-shadow {
+    box-shadow: 2px 2px 3px #AEB8B9;
+    border: 1px solid #BCC6C9;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card {
+    background: #FAFAFA;
+    margin-bottom: 1rem;
+}
+
+.card tr:first-child td, .card tr:first-child th {
+    border-top: 0;
+}
+
+.card,
+.border-shadow {
+    box-shadow: 2px 2px 3px #AEB8B9;
+    border: 1px solid #BCC6C9;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.card > .card-header {
+    height: 35px;
+    color: #454d55;
+    text-shadow: 1px 1px 1px #fff;
+    font-size: 14px;
+    padding: 0.6rem 1rem;
+    border-bottom: 1px solid #BCC6C9;
+    background-image: linear-gradient(0deg, #d1d5d6, #fcfdfd);
+}
+
+.card > .card-header > ul > li {
+    font-weight: 800;
+    background: transparent;
+    color: #000;
+    padding-left: 10px;
+}
+
+.card-header {
+    padding: .75rem 1.25rem;
+    background-color: #f5f5f5;
+    border-bottom: 1px solid rgba(0, 0, 0, .125);
+}
+
+.card > .card-block {
+    padding-top: 10px;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+.card > .card-block > table > tbody > tr:last-child > td {
+    border-bottom: 0px;
+}
+
+.card > .card-block > h3 {
+    padding-left: 20px;
+}
+
+.card > .card-block > span {
+    padding-left: 20px;
+}
+
+.card > .card-block > span#content {
+    padding-bottom: 20px;
+}
+
+.card > .card-block > .bbs-content {
+    padding-left: 20px;
+}

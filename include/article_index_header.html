@@ -1,0 +1,175 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>软件工程教学网站</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free HTML5 Website Template by freehtml5.co" />
+    <meta name="keywords" content="free website templates, free html5, free template, free bootstrap, free website template, html5, css3, mobile first, responsive" />
+
+    <!-- Facebook and Twitter integration -->
+    <meta property="og:title" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:site_name" content="" />
+    <meta property="og:description" content="" />
+    <meta name="twitter:title" content="" />
+    <meta name="twitter:image" content="" />
+    <meta name="twitter:url" content="" />
+    <meta name="twitter:card" content="" />
+
+    <!--<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">-->
+    <!--<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:300,400" rel="stylesheet">-->
+
+    <!-- Animate.css -->
+    <link rel="stylesheet" href="./css/animate.css">
+    <!-- Icomoon Icon Fonts-->
+    <link rel="stylesheet" href="./css/icomoon.css">
+    <!-- Bootstrap  -->
+    <!-- <link rel="stylesheet" href="css/bootstrap-3.3.7-dist/css/bootstrap.css"> -->
+
+    <!-- Magnific Popup -->
+    <link rel="stylesheet" href="./css/magnific-popup.css">
+
+    <!-- Owl Carousel  -->
+    <link rel="stylesheet" href="./css/owl.carousel.min.css">
+    <link rel="stylesheet" href="./css/owl.theme.default.min.css">
+
+    <!-- Flexslider  -->
+    <link rel="stylesheet" href="./css/flexslider.css">
+
+    <!-- Pricing -->
+    <link rel="stylesheet" href="./css/pricing.css">
+
+    <!-- Theme style  -->
+    <link rel="stylesheet" href="./css/style.css">
+
+    <script type="text/javascript" src="./ckeditor/ckeditor.js"></script>
+    <link rel="stylesheet" href="./css/global.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <link rel="stylesheet" href="./css/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="./js/jquery.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/modernizr-2.6.2.min.js"></script>
+    <!-- FOR IE9 below -->
+    <!--[if lt IE 9]>
+    <script src="./js/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+<div class="fh5co-loader"></div>
+
+<div id="page">
+    <nav class="fh5co-nav" role="navigation">
+        <div class="top-menu">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-2">
+                        <div id="fh5co-logo"><a href="index.php"><i class="icon-study"></i> SETS. </a></div>
+                    </div>
+                    <div class="col-xs-10 text-right menu-1">
+                        <ul>
+                            <li><a href="index.php">主页</a></li>
+                            <li class="active"><a style="background-color: #5bc0de; color: white; padding: 10px;border-radius: 5px;" href="article.php">文章</a></li>
+                            <li class="btn-cta" id="login" data-toggle="modal" data-target="#myModal2"><a href="#"><span>登录</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <aside id="fh5co-hero">
+        <div class="flexslider">
+            <ul class="slides">
+                <li style="background-image: url(./images/writing.jpg);">
+                    <div class="overlay-gradient"></div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-md-offset-2 text-center slider-text">
+                                <div class="slider-text-inner">
+                                    <h1 class="heading-section">文章管理</h1>
+                                    <h2>教师可以进行添加文章和编辑、查看文章<br />学生可以查看文章<br />游客可以查看文章</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="sticky-bar">
+            <button id="notice" class="btn btn-warning notice" data-toggle="modal" data-target="#myModal">
+                <span class="glyphicon glyphicon-exclamation-sign"></span>
+                <br  />公<br />告
+            </button>
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header btn-info">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">×</span>
+                            </button>
+                            <h4 class="modal-title" id="myModalLabel">公告</h4>
+                        </div>
+                        <div class="modal-body">
+                            <?php
+                                require_once('./php/mysqli_connect.php');
+                                $query = "select content from notice ORDER BY id DESC";
+                                //echo $query;
+                                $result = @mysqli_query($dbc, $query);
+                                if ($result) {
+                                    $row = mysqli_fetch_array($result, MYSQLI_ASSOC);
+                                    echo $row['content'];
+                                } else {
+                                    echo "";
+                                }
+
+                                ?>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success" data-dismiss="modal">我知道了</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabe2">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <form class="form-horizontal" action="<?php echo $_SERVER['PHP_SELF'];?>" method="post">
+                            <div class="modal-header btn-info">
+                                <span class="heading modal-title" id="myModalLabe2">用户登录</span>
+                            </div>
+                            <div class="modal-body">
+                                <div class="form-group">
+                                    <input class="form-control" name="id" id="inputEmail3" placeholder="用户名">
+                                    <i class="fa fa-user"></i>
+                                </div>
+                                <div class="form-group help">
+                                    <input type="password" class="form-control" name="pwd" id="inputPassword3" placeholder="密　码">
+                                    <i class="fa fa-lock"></i>
+                                    <a href="#" class="fa fa-question-circle"></a>
+                                </div>
+                                <div class="form-group">
+                                    <div class="main-checkbox">
+                                        <input type="checkbox" value="None" id="checkbox1" name="check" />
+                                        <label for="checkbox1"></label>
+                                    </div>
+                                    <span class="text">Remember me</span>
+                                    <button id="userLogin" type="submit" name="submit" class="btn-form-temp btn-info">登录</button>
+                                </div>
+                                <div class="modal-footer">
+                                    <div style="clear: both; float: left"><a href="password_find.php">忘记密码？</a></div>
+                                    <div style="float: right"><a href="signup.php">立即注册</a></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>

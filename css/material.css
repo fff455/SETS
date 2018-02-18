@@ -1,0 +1,18 @@
+.panel-info a{
+    text-decoration: none;
+}
+.panel-body{
+    max-height: 400px;
+    overflow:auto;
+}
+.materialPane{
+    position: relative;
+    left: 10%;
+    width: 80%;
+}
+.table-hover td{
+    text-align: center;
+}
+.table-hover th{
+    text-align: center;
+}

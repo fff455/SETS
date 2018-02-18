@@ -1,0 +1,23 @@
+table{
+    position: relative;
+    left: 300px;
+
+}
+td{
+    text-align: center;
+    border: solid 1px black;
+}
+h3{
+    position: relative;
+    left: 500px;
+}
+h4{
+    border: solid 1px black;
+}
+.plainText{
+    float: right;
+    position: relative;
+    right: 150px;
+    width:50%;
+
+}
